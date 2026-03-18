@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Food Finder</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="area">Area</string>
+    <string name="state">State</string>
+    <string name="country">Country</string>
+    <string name="open_maps">Open in Google Maps</string>
+</resources>

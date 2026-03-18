@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.foodfinderfinal1.app-mergeDebugResources-43:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\joeg1\\.gradle\\caches\\9.3.1\\transforms\\eacf8ed611dc9fda1af4852de670c4e5\\workspace\\transformed\\appcompat-1.7.1\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

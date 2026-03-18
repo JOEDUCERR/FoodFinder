@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">720024371982</string>
+    <string name="google_api_key" translatable="false">AIzaSyCUiSruS_m-pMM4yCv4AXMGBmsWimLK_so</string>
+    <string name="google_app_id" translatable="false">1:720024371982:android:5bdd5397a91748a9adcd5f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCUiSruS_m-pMM4yCv4AXMGBmsWimLK_so</string>
+    <string name="google_storage_bucket" translatable="false">foodfinderfinal1.firebasestorage.app</string>
+    <string name="project_id" translatable="false">foodfinderfinal1</string>
+</resources>
