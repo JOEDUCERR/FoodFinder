@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.example.foodfinderfinal1.app-debug-45:/layout_item_restaurant.xml.flat",
+        "source": "com.example.foodfinderfinal1.app-main-47:/layout/item_restaurant.xml"
+    },
+    {
+        "merged": "com.example.foodfinderfinal1.app-debug-45:/layout_activity_restaurant_detail.xml.flat",
+        "source": "com.example.foodfinderfinal1.app-main-47:/layout/activity_restaurant_detail.xml"
+    },
+    {
+        "merged": "com.example.foodfinderfinal1.app-debug-45:/layout_activity_register.xml.flat",
+        "source": "com.example.foodfinderfinal1.app-main-47:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.foodfinderfinal1.app-debug-45:/layout_item_food.xml.flat",
+        "source": "com.example.foodfinderfinal1.app-main-47:/layout/item_food.xml"
+    },
+    {
+        "merged": "com.example.foodfinderfinal1.app-debug-45:/layout_activity_login.xml.flat",
+        "source": "com.example.foodfinderfinal1.app-main-47:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.foodfinderfinal1.app-debug-45:/layout_activity_main.xml.flat",
+        "source": "com.example.foodfinderfinal1.app-main-47:/layout/activity_main.xml"
+    }
+]

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "720024371982",
+    "project_id": "foodfinderfinal1",
+    "storage_bucket": "foodfinderfinal1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720024371982:android:5bdd5397a91748a9adcd5f",
+        "android_client_info": {
+          "package_name": "com.example.foodfinderfinal1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUiSruS_m-pMM4yCv4AXMGBmsWimLK_so"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

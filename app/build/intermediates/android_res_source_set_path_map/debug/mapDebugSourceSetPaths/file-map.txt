@@ -1,0 +1,9 @@
+com.example.foodfinderfinal1.app-pngs-0 Z:\Dev\Projects\FoodFinderFinal1\app\build\generated\res\pngs\debug
+com.example.foodfinderfinal1.app-res-1 Z:\Dev\Projects\FoodFinderFinal1\app\build\generated\res\processDebugGoogleServices
+com.example.foodfinderfinal1.app-resValues-2 Z:\Dev\Projects\FoodFinderFinal1\app\build\generated\res\resValues\debug
+com.example.foodfinderfinal1.app-updated_navigation_xml-3 Z:\Dev\Projects\FoodFinderFinal1\app\build\generated\updated_navigation_xml\debug
+com.example.foodfinderfinal1.app-packageDebugResources-4 Z:\Dev\Projects\FoodFinderFinal1\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.foodfinderfinal1.app-packageDebugResources-5 Z:\Dev\Projects\FoodFinderFinal1\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.foodfinderfinal1.app-debug-6 Z:\Dev\Projects\FoodFinderFinal1\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.foodfinderfinal1.app-debug-7 Z:\Dev\Projects\FoodFinderFinal1\app\src\debug\res
+com.example.foodfinderfinal1.app-main-8 Z:\Dev\Projects\FoodFinderFinal1\app\src\main\res
