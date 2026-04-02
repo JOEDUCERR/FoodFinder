@@ -29,7 +29,7 @@ An Android application that lets users add and discover restaurants, storing dat
 
 ### Prerequisites
 
-- Android Studio (Arctic Fox or later)
+- Android Studio (Android Studio Panda 4)
 - A Firebase account
 - An Android device or emulator (API 21+)
 
