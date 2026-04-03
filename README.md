@@ -16,7 +16,7 @@ An Android application that lets users add and discover restaurants, storing dat
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
-|---|---|
+|---|
 | Language | Kotlin |
 | Platform | Android |
 | Database | Firebase Realtime Database |
