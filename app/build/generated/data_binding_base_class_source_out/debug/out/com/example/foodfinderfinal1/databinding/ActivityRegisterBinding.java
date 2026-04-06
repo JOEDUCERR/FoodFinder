@@ -4,33 +4,34 @@ package com.example.foodfinderfinal1.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.foodfinderfinal1.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityRegisterBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
-  public final Button btnDoRegister;
+  public final MaterialButton btnDoRegister;
 
   @NonNull
-  public final EditText etRegEmail;
+  public final TextInputEditText etRegEmail;
 
   @NonNull
-  public final EditText etRegPassword;
+  public final TextInputEditText etRegPassword;
 
-  private ActivityRegisterBinding(@NonNull LinearLayout rootView, @NonNull Button btnDoRegister,
-      @NonNull EditText etRegEmail, @NonNull EditText etRegPassword) {
+  private ActivityRegisterBinding(@NonNull ScrollView rootView,
+      @NonNull MaterialButton btnDoRegister, @NonNull TextInputEditText etRegEmail,
+      @NonNull TextInputEditText etRegPassword) {
     this.rootView = rootView;
     this.btnDoRegister = btnDoRegister;
     this.etRegEmail = etRegEmail;
@@ -39,7 +40,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -65,24 +66,24 @@ public final class ActivityRegisterBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnDoRegister;
-      Button btnDoRegister = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnDoRegister = ViewBindings.findChildViewById(rootView, id);
       if (btnDoRegister == null) {
         break missingId;
       }
 
       id = R.id.etRegEmail;
-      EditText etRegEmail = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText etRegEmail = ViewBindings.findChildViewById(rootView, id);
       if (etRegEmail == null) {
         break missingId;
       }
 
       id = R.id.etRegPassword;
-      EditText etRegPassword = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText etRegPassword = ViewBindings.findChildViewById(rootView, id);
       if (etRegPassword == null) {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((LinearLayout) rootView, btnDoRegister, etRegEmail,
+      return new ActivityRegisterBinding((ScrollView) rootView, btnDoRegister, etRegEmail,
           etRegPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);

@@ -12,11 +12,11 @@
 9-->INJECTED
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:5:5-67
-11-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:5:22-64
+11-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:5:5-67
+11-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:6:5-79
-12-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:6:22-76
+12-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:6:5-79
+12-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 13-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\d17951ffff041f6856218f40831278bb\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:5-98
 13-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\d17951ffff041f6856218f40831278bb\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:22-95
@@ -33,51 +33,51 @@
 19-->[androidx.core:core:1.17.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\1177a4e3897aae811e21e8b09d98436e\workspace\transformed\core-1.17.0\AndroidManifest.xml:26:22-94
 20
 21    <application
-21-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:8:5-29:19
+21-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:8:5-29:19
 22        android:allowBackup="true"
-22-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:9:9-35
+22-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:9:9-35
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 23-->[androidx.core:core:1.17.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\1177a4e3897aae811e21e8b09d98436e\workspace\transformed\core-1.17.0\AndroidManifest.xml:28:18-86
 24        android:debuggable="true"
 25        android:extractNativeLibs="false"
 25-->INJECTED
 26        android:icon="@drawable/m3_split_button_chevron_avd"
-26-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:10:9-61
+26-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:10:9-61
 27        android:label="@string/app_name"
-27-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:11:9-41
+27-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:11:9-41
 28        android:roundIcon="@drawable/m3_split_button_chevron_avd"
-28-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:12:9-66
+28-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:12:9-66
 29        android:supportsRtl="true"
-29-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:13:9-35
+29-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:13:9-35
 30        android:testOnly="true"
 31        android:theme="@style/Theme.FoodFinderFinal1" >
-31-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:14:9-54
+31-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:14:9-54
 32        <activity
-32-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:16:9-23:20
+32-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:16:9-23:20
 33            android:name="com.example.foodfinderfinal1.LoginActivity"
-33-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:17:13-42
+33-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:17:13-42
 34            android:exported="true" >
-34-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:18:13-36
+34-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:18:13-36
 35            <intent-filter>
-35-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:19:13-22:29
+35-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:19:13-22:29
 36                <action android:name="android.intent.action.MAIN" />
-36-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:20:17-69
-36-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:20:25-66
+36-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:20:17-69
+36-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:20:25-66
 37
 38                <category android:name="android.intent.category.LAUNCHER" />
-38-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:21:17-77
-38-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:21:27-74
+38-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:21:17-77
+38-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:21:27-74
 39            </intent-filter>
 40        </activity>
 41        <activity android:name="com.example.foodfinderfinal1.RegisterActivity" />
-41-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:25:9-54
-41-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:25:19-51
+41-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:25:9-54
+41-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:25:19-51
 42        <activity android:name="com.example.foodfinderfinal1.MainActivity" />
-42-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:26:9-50
-42-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:26:19-47
+42-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:26:9-50
+42-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:26:19-47
 43        <activity android:name="com.example.foodfinderfinal1.RestaurantDetailActivity" />
-43-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:27:9-62
-43-->Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:27:19-59
+43-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:27:9-62
+43-->Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:27:19-59
 44        <activity
 44-->[com.google.firebase:firebase-auth:23.2.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\713e2035712e186a2f4137302670dfcf\workspace\transformed\firebase-auth-23.2.0\AndroidManifest.xml:29:9-46:20
 45            android:name="com.google.firebase.auth.internal.GenericIdpActivity"

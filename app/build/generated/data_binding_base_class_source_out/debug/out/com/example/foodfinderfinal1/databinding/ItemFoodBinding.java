@@ -4,20 +4,23 @@ package com.example.foodfinderfinal1.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.foodfinderfinal1.R;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ItemFoodBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final MaterialCardView rootView;
+
+  @NonNull
+  public final TextView tvFoodDesc;
 
   @NonNull
   public final TextView tvFoodName;
@@ -25,16 +28,17 @@ public final class ItemFoodBinding implements ViewBinding {
   @NonNull
   public final TextView tvFoodPrice;
 
-  private ItemFoodBinding(@NonNull LinearLayout rootView, @NonNull TextView tvFoodName,
-      @NonNull TextView tvFoodPrice) {
+  private ItemFoodBinding(@NonNull MaterialCardView rootView, @NonNull TextView tvFoodDesc,
+      @NonNull TextView tvFoodName, @NonNull TextView tvFoodPrice) {
     this.rootView = rootView;
+    this.tvFoodDesc = tvFoodDesc;
     this.tvFoodName = tvFoodName;
     this.tvFoodPrice = tvFoodPrice;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public MaterialCardView getRoot() {
     return rootView;
   }
 
@@ -59,6 +63,12 @@ public final class ItemFoodBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.tvFoodDesc;
+      TextView tvFoodDesc = ViewBindings.findChildViewById(rootView, id);
+      if (tvFoodDesc == null) {
+        break missingId;
+      }
+
       id = R.id.tvFoodName;
       TextView tvFoodName = ViewBindings.findChildViewById(rootView, id);
       if (tvFoodName == null) {
@@ -71,7 +81,7 @@ public final class ItemFoodBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemFoodBinding((LinearLayout) rootView, tvFoodName, tvFoodPrice);
+      return new ItemFoodBinding((MaterialCardView) rootView, tvFoodDesc, tvFoodName, tvFoodPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
