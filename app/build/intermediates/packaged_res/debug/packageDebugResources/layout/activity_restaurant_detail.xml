@@ -1,49 +1,289 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/tvDetailName"
+    android:orientation="vertical"
+    android:background="#F5F5F0">
+ 
+    <!-- Green Hero Header -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Restaurant Name"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:orientation="vertical"
+        android:background="#1B5E20"
         android:padding="16dp"
-        android:background="?attr/colorPrimary"
-        android:textColor="?attr/colorOnPrimary"/>
-
-    <TextView
-        android:id="@+id/tvDetailInfo"
+        android:paddingTop="20dp">
+ 
+        <!-- Back Button -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+ 
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginEnd="6dp"/>
+ 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:textSize="13sp"
+                android:textColor="#A5D6A7"/>
+ 
+        </LinearLayout>
+ 
+        <!-- Restaurant Name -->
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="10dp"/>
+ 
+        <!-- Badges Row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+ 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.8 ★"
+                android:textSize="11sp"
+                android:textColor="#F57F17"
+                android:background="@drawable/bg_badge_yellow"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginEnd="6dp"/>
+ 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open now"
+                android:textSize="11sp"
+                android:textColor="#2E7D32"
+                android:background="@drawable/bg_badge_green_light"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginEnd="6dp"/>
+ 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indian · $$"
+                android:textSize="11sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bg_badge_white_translucent"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"/>
+ 
+        </LinearLayout>
+ 
+    </LinearLayout>
+ 
+    <!-- White Content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Address / Info"
-        android:textSize="16sp"
-        android:padding="16dp"/>
-
-    <Button
-        android:id="@+id/btnOpenMaps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/open_maps"
-        android:layout_marginBottom="16dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Menu / Food Items"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:background="#EEE"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFoodItems"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp"/>
-
+        android:layout_height="match_parent">
+ 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+ 
+            <!-- Stats Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="#FFFFFF">
+ 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_card"
+                    android:padding="10dp"
+                    android:layout_marginEnd="6dp">
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.8 km"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#2E7D32"/>
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Distance"
+                        android:textSize="10sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginTop="2dp"/>
+ 
+                </LinearLayout>
+ 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_card"
+                    android:padding="10dp"
+                    android:layout_marginEnd="6dp">
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="~12 min"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#2E7D32"/>
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drive time"
+                        android:textSize="10sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginTop="2dp"/>
+ 
+                </LinearLayout>
+ 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_card"
+                    android:padding="10dp">
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="200+"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#2E7D32"/>
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reviews"
+                        android:textSize="10sp"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginTop="2dp"/>
+ 
+                </LinearLayout>
+ 
+            </LinearLayout>
+ 
+            <!-- Address -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="12dp"
+                android:gravity="top"
+                android:background="#FFFFFF">
+ 
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_location"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="2dp"/>
+ 
+                <TextView
+                    android:id="@+id/tvDetailInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Address / Info"
+                    android:textSize="13sp"
+                    android:textColor="#616161"
+                    android:lineSpacingExtra="2dp"/>
+ 
+            </LinearLayout>
+ 
+            <!-- Get Directions Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenMaps"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Get directions"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1B5E20"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_map"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="14dp"/>
+ 
+            <!-- Menu Section Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#F1F8E9"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+ 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Menu items"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"/>
+ 
+            </LinearLayout>
+ 
+            <!-- Food Items RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFoodItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:nestedScrollingEnabled="false"
+                android:padding="8dp"/>
+ 
+        </LinearLayout>
+ 
+    </ScrollView>
+ 
 </LinearLayout>

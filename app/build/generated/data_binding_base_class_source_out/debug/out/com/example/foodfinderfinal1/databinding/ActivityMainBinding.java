@@ -4,22 +4,30 @@ package com.example.foodfinderfinal1.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.foodfinderfinal1.R;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CoordinatorLayout rootView;
+
+  @NonNull
+  public final Chip chipAll;
+
+  @NonNull
+  public final ChipGroup chipGroupCuisine;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -30,17 +38,25 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView tvLocationTitle;
 
-  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull ProgressBar progressBar,
-      @NonNull RecyclerView rvRestaurants, @NonNull TextView tvLocationTitle) {
+  @NonNull
+  public final TextView tvSearchHint;
+
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView, @NonNull Chip chipAll,
+      @NonNull ChipGroup chipGroupCuisine, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView rvRestaurants, @NonNull TextView tvLocationTitle,
+      @NonNull TextView tvSearchHint) {
     this.rootView = rootView;
+    this.chipAll = chipAll;
+    this.chipGroupCuisine = chipGroupCuisine;
     this.progressBar = progressBar;
     this.rvRestaurants = rvRestaurants;
     this.tvLocationTitle = tvLocationTitle;
+    this.tvSearchHint = tvSearchHint;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -65,6 +81,18 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.chipAll;
+      Chip chipAll = ViewBindings.findChildViewById(rootView, id);
+      if (chipAll == null) {
+        break missingId;
+      }
+
+      id = R.id.chipGroupCuisine;
+      ChipGroup chipGroupCuisine = ViewBindings.findChildViewById(rootView, id);
+      if (chipGroupCuisine == null) {
+        break missingId;
+      }
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
@@ -83,8 +111,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, progressBar, rvRestaurants,
-          tvLocationTitle);
+      id = R.id.tvSearchHint;
+      TextView tvSearchHint = ViewBindings.findChildViewById(rootView, id);
+      if (tvSearchHint == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((CoordinatorLayout) rootView, chipAll, chipGroupCuisine,
+          progressBar, rvRestaurants, tvLocationTitle, tvSearchHint);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
