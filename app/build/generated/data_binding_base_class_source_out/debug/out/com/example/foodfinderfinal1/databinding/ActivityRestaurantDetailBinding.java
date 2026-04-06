@@ -4,7 +4,6 @@ package com.example.foodfinderfinal1.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.foodfinderfinal1.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,7 +22,7 @@ public final class ActivityRestaurantDetailBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final Button btnOpenMaps;
+  public final MaterialButton btnOpenMaps;
 
   @NonNull
   public final RecyclerView rvFoodItems;
@@ -34,7 +34,7 @@ public final class ActivityRestaurantDetailBinding implements ViewBinding {
   public final TextView tvDetailName;
 
   private ActivityRestaurantDetailBinding(@NonNull LinearLayout rootView,
-      @NonNull Button btnOpenMaps, @NonNull RecyclerView rvFoodItems,
+      @NonNull MaterialButton btnOpenMaps, @NonNull RecyclerView rvFoodItems,
       @NonNull TextView tvDetailInfo, @NonNull TextView tvDetailName) {
     this.rootView = rootView;
     this.btnOpenMaps = btnOpenMaps;
@@ -71,7 +71,7 @@ public final class ActivityRestaurantDetailBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnOpenMaps;
-      Button btnOpenMaps = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnOpenMaps = ViewBindings.findChildViewById(rootView, id);
       if (btnOpenMaps == null) {
         break missingId;
       }

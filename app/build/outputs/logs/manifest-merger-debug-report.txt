@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:2:1-31:12
 MERGED from [androidx.databinding:viewbinding:9.1.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\a34edba332943aaf65d38a8439e98842\workspace\transformed\viewbinding-9.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\f800a6275cb8e721caeffcc7adfdd7ff\workspace\transformed\material-1.13.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\bc94a1ac14217b72523a2e72738df4df\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
@@ -68,33 +68,33 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\joeg1\.gradle\cache
 MERGED from [androidx.compose.runtime:runtime-annotation-android:1.9.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\f0f790707b27a156f8a178d002b760e6\workspace\transformed\runtime-annotation\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\ad9aa3e63b3f90422229ba33d2f49774\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:2:1-21:12
 	package
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:3:5-43
-		INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:3:5-43
+		INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:5:5-67
 MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\713e2035712e186a2f4137302670dfcf\workspace\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\713e2035712e186a2f4137302670dfcf\workspace\transformed\firebase-auth-23.2.0\AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\d17951ffff041f6856218f40831278bb\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\d17951ffff041f6856218f40831278bb\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:7:5-67
 	android:name
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:6:5-79
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:6:5-79
 MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\713e2035712e186a2f4137302670dfcf\workspace\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\713e2035712e186a2f4137302670dfcf\workspace\transformed\firebase-auth-23.2.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\d17951ffff041f6856218f40831278bb\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:8:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\d17951ffff041f6856218f40831278bb\workspace\transformed\recaptcha-18.6.1\AndroidManifest.xml:8:5-79
 	android:name
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:6:22-76
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:8:5-29:19
-INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:8:5-29:19
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:8:5-29:19
+INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:8:5-29:19
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\f800a6275cb8e721caeffcc7adfdd7ff\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\f800a6275cb8e721caeffcc7adfdd7ff\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\bc94a1ac14217b72523a2e72738df4df\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -138,53 +138,53 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\joeg1\.gradle\cach
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\ad9aa3e63b3f90422229ba33d2f49774\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\ad9aa3e63b3f90422229ba33d2f49774\workspace\transformed\core-common-2.0.3\AndroidManifest.xml:11:5-19:19
 	android:extractNativeLibs
-		INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.17.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\1177a4e3897aae811e21e8b09d98436e\workspace\transformed\core-1.17.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:11:9-41
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:12:9-66
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:12:9-66
 	android:icon
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:10:9-61
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:10:9-61
 	android:allowBackup
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:14:9-54
 activity#com.example.foodfinderfinal1.LoginActivity
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:16:9-23:20
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:16:9-23:20
 	android:exported
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:18:13-36
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:17:13-42
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:17:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:19:13-22:29
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:20:17-69
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.example.foodfinderfinal1.RegisterActivity
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:25:9-54
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:25:9-54
 	android:name
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:25:19-51
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:25:19-51
 activity#com.example.foodfinderfinal1.MainActivity
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:26:9-50
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:26:9-50
 	android:name
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:26:19-47
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:26:19-47
 activity#com.example.foodfinderfinal1.RestaurantDetailActivity
-ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:27:9-62
+ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:27:9-62
 	android:name
-		ADDED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml:27:19-59
+		ADDED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml:27:19-59
 uses-sdk
-INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml
-INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml
+INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml
+INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:9.1.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\a34edba332943aaf65d38a8439e98842\workspace\transformed\viewbinding-9.1.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:9.1.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\a34edba332943aaf65d38a8439e98842\workspace\transformed\viewbinding-9.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\f800a6275cb8e721caeffcc7adfdd7ff\workspace\transformed\material-1.13.0\AndroidManifest.xml:20:5-44
@@ -314,9 +314,9 @@ MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\joeg1\.gradle\c
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\713e2035712e186a2f4137302670dfcf\workspace\transformed\firebase-auth-23.2.0\AndroidManifest.xml:23:9-148
 	android:targetSdkVersion
-		INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from Z:\Dev\Projects\FoodFinderFinal1\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\Dev\Projects\FoodFinder9999\FoodFinder\app\src\main\AndroidManifest.xml
 activity#com.google.firebase.auth.internal.GenericIdpActivity
 ADDED from [com.google.firebase:firebase-auth:23.2.0] C:\Users\joeg1\.gradle\caches\9.3.1\transforms\713e2035712e186a2f4137302670dfcf\workspace\transformed\firebase-auth-23.2.0\AndroidManifest.xml:29:9-46:20
 	android:excludeFromRecents
