@@ -1,72 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp"/>
-
-    <EditText
-        android:id="@+id/etEmail"
+    android:background="#F5F5F0"
+    android:fillViewport="true">
+ 
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:layout_marginBottom="16dp"/>
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:layout_marginBottom="16dp"/>
-
-    <!-- Location info for finding restaurants -->
-    <EditText
-        android:id="@+id/etArea"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/area"
-        android:inputType="text"
-        android:layout_marginBottom="8dp"/>
-
-    <EditText
-        android:id="@+id/etState"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/state"
-        android:inputType="text"
-        android:layout_marginBottom="8dp"/>
-
-    <EditText
-        android:id="@+id/etCountry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/country"
-        android:inputType="text"
-        android:layout_marginBottom="24dp"/>
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_marginBottom="8dp"/>
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        style="?attr/materialButtonOutlinedStyle"/>
-
-</LinearLayout>
+        android:orientation="vertical">
+ 
+        <!-- Green Header Hero -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#1B5E20"
+            android:padding="24dp">
+ 
+            <!-- Fork/Knife Icon Box -->
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/bg_icon_orange"
+                android:src="@drawable/ic_fork_knife"
+                android:padding="14dp"
+                android:layout_marginBottom="16dp"/>
+ 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FoodFinder"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="6dp"/>
+ 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discover great food, anywhere"
+                android:textSize="13sp"
+                android:textColor="#80CBC4"/>
+ 
+        </LinearLayout>
+ 
+        <!-- White Form Body -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="24dp">
+ 
+            <!-- Email -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email address"
+                android:textSize="13sp"
+                android:textColor="#424242"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+ 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+ 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="you@email.com"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/bg_input_field"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#212121"
+                    android:textColorHint="#9E9E9E"/>
+ 
+            </com.google.android.material.textfield.TextInputLayout>
+ 
+            <!-- Password -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textSize="13sp"
+                android:textColor="#424242"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+ 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:passwordToggleEnabled="true">
+ 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Min. 8 characters"
+                    android:inputType="textPassword"
+                    android:background="@drawable/bg_input_field"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#212121"
+                    android:textColorHint="#9E9E9E"/>
+ 
+            </com.google.android.material.textfield.TextInputLayout>
+ 
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="12dp"/>
+ 
+            <!-- Location Hint -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set your default location to find nearby restaurants"
+                android:textSize="12sp"
+                android:textColor="#2E7D32"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="14dp"/>
+ 
+            <!-- Area -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Area / locality"
+                android:textSize="13sp"
+                android:textColor="#424242"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+ 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+ 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g. Connaught Place"
+                    android:inputType="text"
+                    android:background="@drawable/bg_input_field"
+                    android:drawableStart="@drawable/ic_location"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#212121"
+                    android:textColorHint="#9E9E9E"/>
+ 
+            </com.google.android.material.textfield.TextInputLayout>
+ 
+            <!-- State & Country Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="28dp">
+ 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="State"
+                        android:textSize="13sp"
+                        android:textColor="#424242"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp"/>
+ 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+ 
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="e.g. Delhi"
+                            android:inputType="text"
+                            android:background="@drawable/bg_input_field"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:paddingTop="14dp"
+                            android:paddingBottom="14dp"
+                            android:textSize="14sp"
+                            android:textColor="#212121"
+                            android:textColorHint="#9E9E9E"/>
+ 
+                    </com.google.android.material.textfield.TextInputLayout>
+ 
+                </LinearLayout>
+ 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+ 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Country"
+                        android:textSize="13sp"
+                        android:textColor="#424242"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp"/>
+ 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+ 
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCountry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="e.g. India"
+                            android:inputType="text"
+                            android:background="@drawable/bg_input_field"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:paddingTop="14dp"
+                            android:paddingBottom="14dp"
+                            android:textSize="14sp"
+                            android:textColor="#212121"
+                            android:textColorHint="#9E9E9E"/>
+ 
+                    </com.google.android.material.textfield.TextInputLayout>
+ 
+                </LinearLayout>
+ 
+            </LinearLayout>
+ 
+            <!-- Sign In Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Sign in"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1B5E20"
+                app:cornerRadius="14dp"
+                android:layout_marginBottom="12dp"/>
+ 
+            <!-- Create Account Outlined -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Create account"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#1B5E20"
+                app:strokeWidth="1.5dp"
+                app:cornerRadius="14dp"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_marginBottom="16dp"/>
+ 
+            <!-- Forgot Password -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot password?"
+                android:textSize="13sp"
+                android:textColor="#9E9E9E"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"/>
+ 
+        </LinearLayout>
+ 
+    </LinearLayout>
+ 
+</ScrollView>
