@@ -3,6 +3,8 @@ package com.example.foodfinderfinal1
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -13,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var rvRestaurants: RecyclerView
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,16 +30,35 @@ class MainActivity : AppCompatActivity() {
         val tvLocationTitle = findViewById<TextView>(R.id.tvLocationTitle)
         tvLocationTitle.text = "Restaurants near $area, $state, $country"
 
-        val rvRestaurants = findViewById<RecyclerView>(R.id.rvRestaurants)
+        rvRestaurants = findViewById(R.id.rvRestaurants)
         rvRestaurants.layoutManager = LinearLayoutManager(this)
         
-        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        progressBar = findViewById(R.id.progressBar)
         val fabChat = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabChat)
+        val etSearch = findViewById<EditText>(R.id.etSearch)
 
         fabChat.setOnClickListener {
             startActivity(Intent(this, ChatActivity::class.java))
         }
 
+        // Handle Search Bar Input
+        etSearch.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                val query = etSearch.text.toString().trim()
+                if (query.isNotEmpty()) {
+                    searchRestaurants(query, "", "")
+                }
+                true
+            } else {
+                false
+            }
+        }
+
+        // Initial Load
+        searchRestaurants(area, state, country)
+    }
+
+    private fun searchRestaurants(area: String, state: String, country: String) {
         progressBar.visibility = View.VISIBLE
         
         lifecycleScope.launch {
@@ -42,20 +66,8 @@ class MainActivity : AppCompatActivity() {
             progressBar.visibility = View.GONE
             
             if (restaurants.isEmpty()) {
-                Toast.makeText(this@MainActivity, "No restaurants found or API error. Trying fallback data.", Toast.LENGTH_LONG).show()
-                // Provide fallback list
-                val dummyFoods = listOf(FoodItem("Pizza", "$12.00"), FoodItem("Burger", "$8.00"))
-                val dummyList = listOf(
-                    Restaurant("1", "Local Cafe ($area)", "123 Main St, $area", 0.0, 0.0, dummyFoods),
-                    Restaurant("2", "Pizza Palace", "456 Oak St, $area", 0.0, 0.0, dummyFoods),
-                    Restaurant("3", "Burger Joint", "789 Pine St, $area", 0.0, 0.0, dummyFoods),
-                    Restaurant("4", "Sushi Bar", "101 Elm St, $area", 0.0, 0.0, dummyFoods),
-                    Restaurant("5", "Taco Truck", "202 Maple St, $area", 0.0, 0.0, dummyFoods)
-                )
-                
-                rvRestaurants.adapter = RestaurantAdapter(dummyList) { restaurant ->
-                    openDetail(restaurant)
-                }
+                Toast.makeText(this@MainActivity, "No results for '\$area'. Try another location.", Toast.LENGTH_LONG).show()
+                rvRestaurants.adapter = RestaurantAdapter(emptyList()) {}
             } else {
                 rvRestaurants.adapter = RestaurantAdapter(restaurants) { restaurant ->
                     openDetail(restaurant)

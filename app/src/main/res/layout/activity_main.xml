@@ -17,24 +17,25 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
-            android:paddingTop="20dp">
+            android:paddingTop="20dp"
+            android:background="#1B5E20">
  
             <!-- Top Row: Brand + Location -->
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:layout_marginBottom="12dp">
  
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/tvBrand"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="FoodFinder"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"/>
+                    android:textColor="#FFFFFF"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"/>
  
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -45,7 +46,11 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp">
+                    android:paddingBottom="5dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/tvBrand"
+                    android:layout_marginStart="16dp">
  
                     <ImageView
                         android:layout_width="14dp"
@@ -59,11 +64,13 @@
                         android:layout_height="wrap_content"
                         android:text="Delhi, India"
                         android:textSize="12sp"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:ellipsize="end"
+                        android:singleLine="true"/>
  
                 </LinearLayout>
  
-            </LinearLayout>
+            </RelativeLayout>
  
             <!-- Search Bar -->
             <LinearLayout
@@ -80,16 +87,22 @@
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:src="@drawable/ic_search"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="10dp"
+                    app:tint="#9E9E9E"/>
  
-                <TextView
-                    android:id="@+id/tvSearchHint"
+                <EditText
+                    android:id="@+id/etSearch"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Search city, state, country or food..."
+                    android:hint="Search city, state, country or food..."
                     android:textSize="13sp"
-                    android:textColor="#9E9E9E"/>
+                    android:textColor="#212121"
+                    android:textColorHint="#9E9E9E"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:singleLine="true"/>
  
             </LinearLayout>
  
