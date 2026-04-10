@@ -53,3 +53,38 @@ class FoodAdapter(private val foods: List<FoodItem>) : RecyclerView.Adapter<Food
 
     override fun getItemCount() = foods.size
 }
+
+class ChatAdapter(private val messages: List<ChatMessage>) : RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
+
+    class ChatViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val messageText: TextView = view.findViewById(R.id.tvChatMessage)
+        val card: androidx.cardview.widget.CardView = view.findViewById(R.id.cardMessage)
+        val layout: android.widget.LinearLayout = view as android.widget.LinearLayout
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_message, parent, false)
+        return ChatViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
+        val message = messages[position]
+        holder.messageText.text = message.text
+        
+        val params = holder.card.layoutParams as android.widget.LinearLayout.LayoutParams
+        if (message.isUser) {
+            holder.layout.gravity = android.view.Gravity.END
+            holder.card.setCardBackgroundColor(0xFFE8F5E9.toInt()) // Light Green
+            params.marginStart = 100
+            params.marginEnd = 0
+        } else {
+            holder.layout.gravity = android.view.Gravity.START
+            holder.card.setCardBackgroundColor(0xFFFFFFFF.toInt())
+            params.marginStart = 0
+            params.marginEnd = 100
+        }
+        holder.card.layoutParams = params
+    }
+
+    override fun getItemCount() = messages.size
+}

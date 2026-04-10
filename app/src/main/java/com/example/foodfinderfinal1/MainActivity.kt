@@ -29,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         rvRestaurants.layoutManager = LinearLayoutManager(this)
         
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        val fabChat = findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabChat)
+
+        fabChat.setOnClickListener {
+            startActivity(Intent(this, ChatActivity::class.java))
+        }
 
         progressBar.visibility = View.VISIBLE
         

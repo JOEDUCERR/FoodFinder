@@ -13,3 +13,8 @@ data class FoodItem(
     val name: String,
     val price: String
 ) : java.io.Serializable
+
+data class ChatMessage(
+    val text: String,
+    val isUser: Boolean
+)

@@ -218,5 +218,16 @@
             android:paddingBottom="16dp"/>
  
     </LinearLayout>
- 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:src="@drawable/ic_search"
+        android:contentDescription="Chat with AI"
+        app:backgroundTint="#1B5E20"
+        app:tint="#FFFFFF"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
