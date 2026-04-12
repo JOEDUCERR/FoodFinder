@@ -5,37 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F0">
- 
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#1B5E20"
         app:elevation="0dp">
- 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
-            android:paddingTop="20dp">
- 
+            android:paddingTop="20dp"
+            android:background="#1B5E20">
+
             <!-- Top Row: Brand + Location -->
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:layout_marginBottom="12dp">
- 
+
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/tvBrand"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="FoodFinder"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"/>
- 
+                    android:textColor="#FFFFFF"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"/>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -45,26 +46,32 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp">
- 
+                    android:paddingBottom="5dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/tvBrand"
+                    android:layout_marginStart="16dp">
+
                     <ImageView
                         android:layout_width="14dp"
                         android:layout_height="14dp"
                         android:src="@drawable/ic_location"
                         android:layout_marginEnd="4dp"/>
- 
+
                     <TextView
                         android:id="@+id/tvLocationTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Delhi, India"
                         android:textSize="12sp"
-                        android:textColor="#FFFFFF"/>
- 
+                        android:textColor="#FFFFFF"
+                        android:ellipsize="end"
+                        android:singleLine="true"/>
+
                 </LinearLayout>
- 
-            </LinearLayout>
- 
+
+            </RelativeLayout>
+
             <!-- Search Bar -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -75,26 +82,42 @@
                 android:paddingStart="14dp"
                 android:paddingEnd="14dp"
                 android:layout_marginBottom="4dp">
- 
+
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:src="@drawable/ic_search"
-                    android:layout_marginEnd="10dp"/>
- 
-                <TextView
-                    android:id="@+id/tvSearchHint"
+                    android:layout_marginEnd="10dp"
+                    app:tint="#9E9E9E"/>
+
+                <EditText
+                    android:id="@+id/etSearch"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Search city, state, country or food..."
+                    android:hint="Search any city worldwide..."
                     android:textSize="13sp"
-                    android:textColor="#9E9E9E"/>
- 
+                    android:textColor="#212121"
+                    android:textColorHint="#9E9E9E"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:singleLine="true"/>
+
+                <ImageView
+                    android:id="@+id/btnSearch"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_search"
+                    android:padding="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Search"/>
+
             </LinearLayout>
- 
+
         </LinearLayout>
- 
+
         <!-- Cuisine Filter Chips -->
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -103,18 +126,18 @@
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:paddingBottom="12dp">
- 
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
- 
+
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chipGroupCuisine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleSelection="true">
- 
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipAll"
                         android:layout_width="wrap_content"
@@ -122,52 +145,52 @@
                         android:text="All"
                         android:checked="true"
                         style="@style/Widget.MaterialComponents.Chip.Filter"/>
- 
+
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pizza"
                         style="@style/Widget.MaterialComponents.Chip.Filter"/>
- 
+
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Biryani"
                         style="@style/Widget.MaterialComponents.Chip.Filter"/>
- 
+
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sushi"
                         style="@style/Widget.MaterialComponents.Chip.Filter"/>
- 
+
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Burgers"
                         style="@style/Widget.MaterialComponents.Chip.Filter"/>
- 
+
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Vegan"
                         style="@style/Widget.MaterialComponents.Chip.Filter"/>
- 
+
                 </com.google.android.material.chip.ChipGroup>
- 
+
             </LinearLayout>
- 
+
         </HorizontalScrollView>
- 
+
     </com.google.android.material.appbar.AppBarLayout>
- 
+
     <!-- Main Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
- 
+
         <!-- Section Header -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -178,7 +201,7 @@
             android:paddingEnd="16dp"
             android:paddingTop="16dp"
             android:paddingBottom="8dp">
- 
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -187,36 +210,53 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:textColor="#212121"/>
- 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="See all"
                 android:textSize="13sp"
                 android:textColor="#2E7D32"/>
- 
+
         </LinearLayout>
- 
-        <!-- Progress Bar -->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:indeterminateTint="#2E7D32"
-            android:visibility="gone"/>
- 
-        <!-- Restaurant List -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvRestaurants"
+
+        <!-- FrameLayout lets ProgressBar overlay the RecyclerView cleanly -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="16dp"/>
- 
+            android:layout_height="match_parent">
+
+            <!-- Restaurant List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRestaurants"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="80dp"/>
+
+            <!-- Progress Bar centred over the list -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="#2E7D32"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
     </LinearLayout>
- 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:src="@drawable/ic_fork_knife"
+        android:contentDescription="Chat with AI"
+        app:backgroundTint="#1B5E20"
+        app:tint="#FFFFFF"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

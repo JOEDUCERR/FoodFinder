@@ -34,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
         
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
+        val tvForgotPassword = findViewById<android.widget.TextView>(R.id.tvForgotPassword)
 
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
@@ -66,6 +67,26 @@ class LoginActivity : AppCompatActivity() {
 
         btnRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
+        tvForgotPassword.setOnClickListener {
+            val email = etEmail.text.toString().trim()
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Please enter your email to reset password", Toast.LENGTH_SHORT).show()
+            } else {
+                try {
+                    auth.sendPasswordResetEmail(email)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Toast.makeText(this, "Password reset email sent to $email", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                } catch (e: Exception) {
+                    Toast.makeText(this, "Firebase not connected.", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 

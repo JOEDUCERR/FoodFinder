@@ -15,7 +15,12 @@ class RestaurantDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_detail)
 
-        val restaurant = intent.getSerializableExtra("EXTRA_RESTAURANT") as? Restaurant ?: return
+        @Suppress("DEPRECATION")
+        val restaurant = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            intent.getSerializableExtra("EXTRA_RESTAURANT", Restaurant::class.java)
+        } else {
+            intent.getSerializableExtra("EXTRA_RESTAURANT") as? Restaurant
+        } ?: return
 
         val tvDetailName = findViewById<TextView>(R.id.tvDetailName)
         val tvDetailInfo = findViewById<TextView>(R.id.tvDetailInfo)

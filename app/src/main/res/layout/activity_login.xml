@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
- 
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etArea"
                     android:layout_width="match_parent"
@@ -178,21 +178,21 @@
                     android:textColorHint="#9E9E9E"/>
  
             </com.google.android.material.textfield.TextInputLayout>
- 
+
             <!-- State & Country Row -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="28dp">
- 
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:layout_marginEnd="8dp">
- 
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -201,12 +201,12 @@
                         android:textColor="#424242"
                         android:textStyle="bold"
                         android:layout_marginBottom="6dp"/>
- 
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
- 
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etState"
                             android:layout_width="match_parent"
@@ -221,18 +221,18 @@
                             android:textSize="14sp"
                             android:textColor="#212121"
                             android:textColorHint="#9E9E9E"/>
- 
+
                     </com.google.android.material.textfield.TextInputLayout>
- 
+
                 </LinearLayout>
- 
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:layout_marginStart="8dp">
- 
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -241,12 +241,12 @@
                         android:textColor="#424242"
                         android:textStyle="bold"
                         android:layout_marginBottom="6dp"/>
- 
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
- 
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etCountry"
                             android:layout_width="match_parent"
@@ -261,12 +261,16 @@
                             android:textSize="14sp"
                             android:textColor="#212121"
                             android:textColorHint="#9E9E9E"/>
- 
+
                     </com.google.android.material.textfield.TextInputLayout>
- 
+
                 </LinearLayout>
  
+
+ 
             </LinearLayout>
+
+
  
             <!-- Sign In Button -->
             <com.google.android.material.button.MaterialButton
@@ -299,13 +303,16 @@
  
             <!-- Forgot Password -->
             <TextView
+                android:id="@+id/tvForgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Forgot password?"
                 android:textSize="13sp"
                 android:textColor="#9E9E9E"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
  
         </LinearLayout>
  
