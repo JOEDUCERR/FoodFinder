@@ -53,3 +53,32 @@ class FoodAdapter(private val foods: List<FoodItem>) : RecyclerView.Adapter<Food
 
     override fun getItemCount() = foods.size
 }
+
+class ChatAdapter(private val messages: List<ChatMessage>) : RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
+
+    companion object {
+        private const val TYPE_USER = 1
+        private const val TYPE_AI = 0
+    }
+
+    class ChatViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val messageText: TextView = view.findViewById(R.id.tvChatMessage)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (messages[position].isUser) TYPE_USER else TYPE_AI
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
+        val layout = if (viewType == TYPE_USER) R.layout.item_chat_user else R.layout.item_chat_ai
+        val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
+        return ChatViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
+        val message = messages[position]
+        holder.messageText.text = message.text
+    }
+
+    override fun getItemCount() = messages.size
+}
