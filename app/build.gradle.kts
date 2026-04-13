@@ -32,6 +32,8 @@ android {
         }
         val geminiApiKey = localProperties.getProperty("GEMINI_API_KEY") ?: ""
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
+        val openaiApiKey = localProperties.getProperty("OPENAI_API_KEY") ?: ""
+        buildConfigField("String", "OPENAI_API_KEY", "\"$openaiApiKey\"")
     }
 
     buildTypes {
@@ -66,8 +68,6 @@ dependencies {
     // Firebase (BOM is recommended for managing versions)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
-
-    // Gemini AI
 
     // Coroutines for networking
     implementation(libs.kotlinx.coroutines.android)

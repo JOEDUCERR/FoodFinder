@@ -25,8 +25,8 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var adapter: ChatAdapter
     private lateinit var rvChat: RecyclerView
 
-    // Full conversation history for multi-turn context
-    private val history = mutableListOf<Pair<String, String>>()
+    // Full conversation history sent to OpenAI each turn for context
+    private val history = mutableListOf<JSONObject>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,17 +48,16 @@ class ChatActivity : AppCompatActivity() {
         rvChat.layoutManager = LinearLayoutManager(this).apply { stackFromEnd = true }
         rvChat.adapter = adapter
 
-        // Check API key on startup and show clear instructions if missing
-        val apiKey = BuildConfig.GEMINI_API_KEY.trim()
+        val apiKey = BuildConfig.OPENAI_API_KEY.trim()
         if (apiKey.isBlank() || apiKey == "your_key_here") {
             addMessage(ChatMessage(
-                "⚠️ Gemini API key is not configured.\n\n" +
+                "⚠️ OpenAI API key not configured.\n\n" +
                         "Steps to fix:\n" +
-                        "1. Go to aistudio.google.com\n" +
-                        "2. Click \"Get API key\" → Create key\n" +
+                        "1. Go to platform.openai.com/api-keys\n" +
+                        "2. Click \"Create new secret key\"\n" +
                         "3. Open local.properties in Android Studio\n" +
                         "4. Add this line:\n" +
-                        "   GEMINI_API_KEY=paste_your_key_here\n" +
+                        "   OPENAI_API_KEY=sk-...your_key...\n" +
                         "5. Sync Gradle and rebuild",
                 false
             ))
@@ -97,11 +96,17 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun sendMessage(userText: String) {
-        val apiKey = BuildConfig.GEMINI_API_KEY.trim()
+        val apiKey = BuildConfig.OPENAI_API_KEY.trim()
         if (apiKey.isBlank() || apiKey == "your_key_here") {
-            addMessage(ChatMessage("⚠️ Please add your GEMINI_API_KEY to local.properties first.", false))
+            addMessage(ChatMessage("⚠️ Please add OPENAI_API_KEY to local.properties first.", false))
             return
         }
+
+        // Add user turn to history
+        history.add(JSONObject().apply {
+            put("role", "user")
+            put("content", userText)
+        })
 
         // Typing indicator
         addMessage(ChatMessage("Typing…", false))
@@ -110,86 +115,69 @@ class ChatActivity : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 val reply = withContext(Dispatchers.IO) {
-                    callGeminiApi(apiKey, userText)
+                    callOpenAI(apiKey)
                 }
-                history.add(Pair(userText, reply))
+
+                // Save assistant reply to history for next turn
+                history.add(JSONObject().apply {
+                    put("role", "assistant")
+                    put("content", reply)
+                })
 
                 messages.removeAt(typingIndex)
                 adapter.notifyItemRemoved(typingIndex)
                 addMessage(ChatMessage(reply, false))
 
             } catch (e: Exception) {
+                // Remove failed user message from history so it doesn't corrupt next call
+                if (history.isNotEmpty()) history.removeAt(history.size - 1)
+
                 messages.removeAt(typingIndex)
                 adapter.notifyItemRemoved(typingIndex)
 
-                val msg = when {
+                val errMsg = when {
                     e.message?.contains("401") == true ->
-                        "⚠️ Invalid API key.\nDouble-check GEMINI_API_KEY in local.properties."
-                    e.message?.contains("403") == true ->
-                        "⚠️ API key doesn't have Gemini access.\nCheck your Google AI Studio project."
+                        "⚠️ Invalid API key.\nCheck OPENAI_API_KEY in local.properties.\nMake sure it starts with 'sk-'"
                     e.message?.contains("429") == true ->
-                        "⚠️ Rate limit reached. Wait a moment and try again."
-                    e.message?.contains("404") == true ->
-                        "⚠️ Model not found. Your API key may not have Gemini 1.5 access yet."
+                        "⚠️ Rate limit or quota exceeded.\nCheck your OpenAI billing at platform.openai.com"
+                    e.message?.contains("403") == true ->
+                        "⚠️ Access denied. Your API key may not have GPT access."
                     e.message?.contains("UnknownHostException") == true ->
                         "⚠️ No internet connection."
                     else -> "⚠️ Error: ${e.message}"
                 }
-                addMessage(ChatMessage(msg, false))
-                android.util.Log.e("ChatActivity", "Gemini error", e)
+                addMessage(ChatMessage(errMsg, false))
+                android.util.Log.e("ChatActivity", "OpenAI error", e)
             }
         }
     }
 
-    private fun callGeminiApi(apiKey: String, userText: String): String {
-        val url = URL(
-            "https://generativelanguage.googleapis.com/v1beta/models/" +
-                    "gemini-1.5-flash:generateContent?key=$apiKey"
-        )
+    private fun callOpenAI(apiKey: String): String {
+        val url = URL("https://api.openai.com/v1/chat/completions")
 
-        // Build contents: system context + conversation history + new message
-        val contents = JSONArray()
+        // Build full messages array: system prompt + conversation history
+        val allMessages = JSONArray()
 
-        // Inject a system persona as the first user/model exchange
-        contents.put(JSONObject().apply {
-            put("role", "user")
-            put("parts", JSONArray().put(JSONObject().put("text",
+        // System message — sets the assistant's persona
+        allMessages.put(JSONObject().apply {
+            put("role", "system")
+            put("content",
                 "You are a helpful food and restaurant assistant for the FoodFinder app. " +
                         "Help users find restaurants, suggest dishes, explain cuisines and food items. " +
                         "Be concise, friendly, and use emojis occasionally."
-            )))
-        })
-        contents.put(JSONObject().apply {
-            put("role", "model")
-            put("parts", JSONArray().put(JSONObject().put("text",
-                "Got it! I'm ready to help you find great food. 🍽️"
-            )))
+            )
         })
 
-        // Append conversation history for context
-        for ((u, m) in history) {
-            contents.put(JSONObject().apply {
-                put("role", "user")
-                put("parts", JSONArray().put(JSONObject().put("text", u)))
-            })
-            contents.put(JSONObject().apply {
-                put("role", "model")
-                put("parts", JSONArray().put(JSONObject().put("text", m)))
-            })
+        // Append full conversation history (already includes current user message)
+        for (i in 0 until history.size) {
+            allMessages.put(history[i])
         }
 
-        // Current user message
-        contents.put(JSONObject().apply {
-            put("role", "user")
-            put("parts", JSONArray().put(JSONObject().put("text", userText)))
-        })
-
         val body = JSONObject().apply {
-            put("contents", contents)
-            put("generationConfig", JSONObject().apply {
-                put("temperature", 0.7)
-                put("maxOutputTokens", 500)
-            })
+            put("model", "gpt-3.5-turbo")   // cheapest & fastest; change to "gpt-4o" for better answers
+            put("messages", allMessages)
+            put("max_tokens", 500)
+            put("temperature", 0.7)
         }.toString()
 
         val conn = (url.openConnection() as HttpURLConnection).apply {
@@ -198,6 +186,7 @@ class ChatActivity : AppCompatActivity() {
             connectTimeout = 15000
             readTimeout    = 30000
             setRequestProperty("Content-Type", "application/json")
+            setRequestProperty("Authorization", "Bearer $apiKey")
         }
 
         OutputStreamWriter(conn.outputStream, "UTF-8").use { it.write(body) }
@@ -210,13 +199,16 @@ class ChatActivity : AppCompatActivity() {
 
         val json = JSONObject(conn.inputStream.bufferedReader().use { it.readText() })
         return json
-            .getJSONArray("candidates")
+            .getJSONArray("choices")
             .getJSONObject(0)
-            .getJSONObject("content")
-            .getJSONArray("parts")
-            .getJSONObject(0)
-            .getString("text")
+            .getJSONObject("message")
+            .getString("content")
+            .trim()
     }
+
+    // Extension to iterate JSONArray easily
+    private operator fun JSONArray.iterator(): Iterator<JSONObject> =
+        (0 until length()).asSequence().map { getJSONObject(it) }.iterator()
 
     private fun hideKeyboard(view: android.view.View) {
         (getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager)
