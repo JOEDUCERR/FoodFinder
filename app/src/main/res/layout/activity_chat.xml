@@ -1,77 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F0">
+    android:background="#F5F5F5">
 
-    <!-- Toolbar with back button and title -->
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarChat"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#1B5E20"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_height="56dp"
+        android:background="#1D9E75"
         app:titleTextColor="#FFFFFF"
-        app:title="FoodFinder AI 🍔"
-        app:navigationIcon="@drawable/ic_arrow_back"/>
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="#FFFFFF" />
 
-    <!-- Chat messages list -->
+    <!-- Context banner (shown when launched from a restaurant) -->
+    <TextView
+        android:id="@+id/tvRestaurantContext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E1F5EE"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:text="Viewing: Spice Garden · Indian cuisine"
+        android:textSize="12sp"
+        android:textColor="#085041"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <!-- Chat messages -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvChat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp"
-        android:clipToPadding="false"
-        android:scrollbars="none"/>
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:clipToPadding="false" />
 
-    <!-- Divider -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E0E0E0"/>
-
-    <!-- Input row -->
+    <!-- Input area -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
         android:paddingStart="12dp"
-        android:paddingEnd="8dp"
+        android:paddingEnd="12dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
-        android:gravity="center_vertical"
-        android:background="#FFFFFF">
+        android:elevation="4dp">
 
         <EditText
             android:id="@+id/etMessage"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:hint="Ask about food or restaurants…"
-            android:textColor="#212121"
-            android:textColorHint="#9E9E9E"
-            android:background="@drawable/bg_input_field"
+            android:hint="Ask about food, hours, cuisine…"
+            android:textColor="#1A1A1A"
+            android:textColorHint="#AAAAAA"
+            android:textSize="13sp"
+            android:background="@drawable/bg_chat_input"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:maxLines="4"
             android:imeOptions="actionSend"
-            android:inputType="textMultiLine|textCapSentences"/>
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_marginEnd="8dp" />
 
         <ImageButton
             android:id="@+id/btnSend"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="8dp"
-            android:src="@android:drawable/ic_menu_send"
-            android:background="@drawable/bg_icon_orange"
-            android:contentDescription="Send"
-            android:tint="#FFFFFF"/>
-
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_send_button"
+            android:src="@drawable/ic_send"
+            app:tint="#FFFFFF"
+            android:contentDescription="Send message" />
     </LinearLayout>
 
 </LinearLayout>
