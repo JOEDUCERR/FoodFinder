@@ -1,103 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
-    app:cardCornerRadius="14dp"
-    app:cardElevation="1dp"
-    app:strokeColor="#E8F5E9"
-    app:strokeWidth="1dp"
-    app:cardBackgroundColor="#FFFFFF">
- 
-    <LinearLayout
-        android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <!-- Dot indicator -->
+    <View
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@drawable/bg_dot_green"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/tvFoodName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="12dp">
- 
-        <!-- Veg / Non-veg Indicator Dot -->
-        <View
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:background="@drawable/bg_veg_dot"
-            android:layout_marginEnd="10dp"/>
- 
-        <!-- Food Image Thumbnail -->
-        <LinearLayout
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:background="@drawable/bg_food_thumb"
-            android:layout_marginEnd="12dp">
- 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_food_bowl"/>
- 
-        </LinearLayout>
- 
-        <!-- Name & Description -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
- 
-            <TextView
-                android:id="@+id/tvFoodName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#212121"
-                android:maxLines="1"
-                android:ellipsize="end"/>
- 
-            <TextView
-                android:id="@+id/tvFoodDesc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Freshly prepared"
-                android:textSize="11sp"
-                android:textColor="#9E9E9E"
-                android:layout_marginTop="2dp"
-                android:maxLines="1"
-                android:ellipsize="end"/>
- 
-        </LinearLayout>
- 
-        <!-- Price -->
-        <TextView
-            android:id="@+id/tvFoodPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="#2E7D32"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="10dp"/>
- 
-        <!-- Add Button -->
-        <LinearLayout
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:gravity="center"
-            android:background="@drawable/bg_add_button">
- 
-            <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/ic_add"/>
- 
-        </LinearLayout>
- 
-    </LinearLayout>
- 
-</com.google.android.material.card.MaterialCardView>
+        android:layout_weight="1"
+        android:text="Food Item"
+        android:textSize="13sp"
+        android:textColor="#1A1A1A" />
+
+    <TextView
+        android:id="@+id/tvFoodPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹299"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#1D9E75" />
+
+</LinearLayout>

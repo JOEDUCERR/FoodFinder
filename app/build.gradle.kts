@@ -4,8 +4,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.services)
-    // UNCOMMENT the following line when you connect Firebase:
-    // alias(libs.plugins.google.services)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -68,9 +67,18 @@ dependencies {
     // Firebase (BOM is recommended for managing versions)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+
+    // Google Services
+    implementation("com.google.android.gms:play-services-maps:19.0.0")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+    implementation("com.google.android.gms:play-services-auth:21.3.0")
 
     // Coroutines for networking
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
