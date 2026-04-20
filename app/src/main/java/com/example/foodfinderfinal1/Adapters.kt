@@ -92,6 +92,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import android.widget.ImageView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 // ─────────────────────────────────────────────────────────────────────────────
 // RestaurantAdapter — upgraded to ListAdapter + DiffUtil
@@ -112,8 +115,12 @@ class RestaurantAdapter(
     class RestaurantViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView    = view.findViewById(R.id.tvRestaurantName)
         val address: TextView = view.findViewById(R.id.tvRestaurantAddress)
+        val rating: TextView       = view.findViewById(R.id.tvRating)
+        val cuisineTag: TextView   = view.findViewById(R.id.tvCuisineTag)
+        val ivRestaurantImage: ImageView = view.findViewById(R.id.ivRestaurantImage)
     }
 
+    //Converts XML to View
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_restaurant, parent, false)
@@ -122,9 +129,46 @@ class RestaurantAdapter(
 
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
         val item = getItem(position)
+        //Binding data together
         holder.name.text    = item.name
         holder.address.text = item.address
-        holder.itemView.setOnClickListener { onClick(item) }
+
+        holder.rating.text = if (item.rating > 0f) "★ ${"%.1f".format(item.rating)}" else "★ 4.0"
+
+        val cuisineDisplay = item.cuisineTag
+            .split(";", ",").firstOrNull()?.trim()
+            ?.replaceFirstChar { it.uppercase() } ?: "Food"
+        holder.cuisineTag.text = cuisineDisplay
+
+        // ── Image: only load for first 10 items to stay lightweight ──────────
+        if (position < 10) {
+            val keyword = buildImageKeyword(item.cuisineTag, item.foodItems)
+//            val imageUrl = "https://source.unsplash.com/400x200/?$keyword,food"
+            val imageUrl = "https://picsum.photos/seed/${item.id}/400/200"
+            Glide.with(holder.itemView.context)
+                .load(imageUrl)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .placeholder(R.drawable.bg_restaurant_placeholder)
+                .error(R.drawable.bg_restaurant_placeholder)
+                .into(holder.ivRestaurantImage)
+        } else {
+            // Beyond position 10 — just show placeholder, skip network call
+            holder.ivRestaurantImage.setImageResource(R.drawable.bg_restaurant_placeholder)
+        }
+
+        holder.itemView.setOnClickListener { onClick(item) } //handles clicks outside adapter
+    }
+    private fun buildImageKeyword(cuisineTag: String, foodItems: List<FoodItem>): String {
+        // Try cuisine tag first
+        val cuisine = cuisineTag.split(";", ",").firstOrNull()?.trim()?.lowercase()
+        if (!cuisine.isNullOrBlank() && cuisine != "food") return cuisine
+
+        // Fall back to first food item name
+        val foodName = foodItems.firstOrNull()?.name?.lowercase()
+            ?.replace("₹", "")?.trim()
+        if (!foodName.isNullOrBlank()) return foodName
+
+        return "restaurant"
     }
 }
 
@@ -177,6 +221,7 @@ class ChatAdapter(private val messages: List<ChatMessage>) :
     override fun getItemViewType(position: Int) =
         if (messages[position].isUser) TYPE_USER else TYPE_AI
 
+    //XML to view or inflating layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
         val layout = if (viewType == TYPE_USER) R.layout.item_chat_user else R.layout.item_chat_ai
         return ChatViewHolder(LayoutInflater.from(parent.context).inflate(layout, parent, false))

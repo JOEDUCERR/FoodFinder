@@ -268,19 +268,20 @@ class ChatActivity : AppCompatActivity() {
     private val history = mutableListOf<JSONObject>()
 
     // ── Upgrade 2: restaurant context passed from detail screen ──────────────
-    private var restaurantContext: String = ""
+    private var restaurantContext: String = "" //Passes restaurant context from screen
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbarChat)
+
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             title = "FoodFinder AI 🍔"
         }
-        toolbar.setNavigationOnClickListener { finish() }
+        toolbar.setNavigationOnClickListener { finish() } //back button
 
         rvChat = findViewById(R.id.rvChat)
         val etMessage = findViewById<EditText>(R.id.etMessage)
@@ -305,6 +306,7 @@ class ChatActivity : AppCompatActivity() {
         }
 
         val apiKey = BuildConfig.OPENAI_API_KEY.trim()
+
         if (apiKey.isBlank() || apiKey == "your_key_here") {
             addMessage(ChatMessage(
                 "⚠️ OpenAI API key not configured.\n\n" +
@@ -327,6 +329,7 @@ class ChatActivity : AppCompatActivity() {
             }
         }
 
+        //if user presses enter, the message sends
         btnSend.setOnClickListener { sendAction() }
         etMessage.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEND  ||

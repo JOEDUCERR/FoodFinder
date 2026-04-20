@@ -5,31 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F5">
+    android:background="#FBF5EE">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarChat"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="#1D9E75"
+        android:layout_height="64dp"
+        android:background="#C8641C"
+        android:elevation="6dp"
         app:titleTextColor="#FFFFFF"
+        app:subtitleTextColor="#F2C49A"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:navigationIconTint="#FFFFFF" />
 
     <!-- Context banner (shown when launched from a restaurant) -->
     <TextView
         android:id="@+id/tvRestaurantContext"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#E1F5EE"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/bg_context_pill"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:paddingTop="7dp"
-        android:paddingBottom="7dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
         android:text="Viewing: Spice Garden · Indian cuisine"
         android:textSize="12sp"
-        android:textColor="#085041"
+        android:textColor="#7A3010"
         android:gravity="center"
         android:visibility="gone" />
 
@@ -39,11 +44,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
         android:clipToPadding="false" />
+
+    <!-- Thin divider above input -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDD9C8" />
 
     <!-- Input area -->
     <LinearLayout
@@ -52,37 +63,125 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:background="#FFFFFF"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:elevation="4dp">
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
         <EditText
             android:id="@+id/etMessage"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="46dp"
             android:layout_weight="1"
             android:hint="Ask about food, hours, cuisine…"
             android:textColor="#1A1A1A"
             android:textColorHint="#AAAAAA"
             android:textSize="13sp"
             android:background="@drawable/bg_chat_input"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:imeOptions="actionSend"
             android:inputType="text"
             android:singleLine="true"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="10dp" />
 
         <ImageButton
             android:id="@+id/btnSend"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
             android:background="@drawable/bg_send_button"
             android:src="@drawable/ic_send"
             app:tint="#FFFFFF"
             android:contentDescription="Send message" />
+
     </LinearLayout>
 
 </LinearLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:background="#F5F5F5">-->
+
+<!--    &lt;!&ndash; Toolbar &ndash;&gt;-->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbarChat"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:background="#1D9E75"-->
+<!--        app:titleTextColor="#FFFFFF"-->
+<!--        app:navigationIcon="@drawable/ic_arrow_back"-->
+<!--        app:navigationIconTint="#FFFFFF" />-->
+
+<!--    &lt;!&ndash; Context banner (shown when launched from a restaurant) &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvRestaurantContext"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#E1F5EE"-->
+<!--        android:paddingStart="16dp"-->
+<!--        android:paddingEnd="16dp"-->
+<!--        android:paddingTop="7dp"-->
+<!--        android:paddingBottom="7dp"-->
+<!--        android:text="Viewing: Spice Garden · Indian cuisine"-->
+<!--        android:textSize="12sp"-->
+<!--        android:textColor="#085041"-->
+<!--        android:gravity="center"-->
+<!--        android:visibility="gone" />-->
+
+<!--    &lt;!&ndash; Chat messages &ndash;&gt;-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rvChat"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:paddingTop="12dp"-->
+<!--        android:paddingBottom="12dp"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:clipToPadding="false" />-->
+
+<!--    &lt;!&ndash; Input area &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingTop="8dp"-->
+<!--        android:paddingBottom="8dp"-->
+<!--        android:elevation="4dp">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/etMessage"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:hint="Ask about food, hours, cuisine…"-->
+<!--            android:textColor="#1A1A1A"-->
+<!--            android:textColorHint="#AAAAAA"-->
+<!--            android:textSize="13sp"-->
+<!--            android:background="@drawable/bg_chat_input"-->
+<!--            android:paddingStart="14dp"-->
+<!--            android:paddingEnd="14dp"-->
+<!--            android:imeOptions="actionSend"-->
+<!--            android:inputType="text"-->
+<!--            android:singleLine="true"-->
+<!--            android:layout_marginEnd="8dp" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnSend"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@drawable/bg_send_button"-->
+<!--            android:src="@drawable/ic_send"-->
+<!--            app:tint="#FFFFFF"-->
+<!--            android:contentDescription="Send message" />-->
+<!--    </LinearLayout>-->
+
+<!--</LinearLayout>-->
