@@ -4,21 +4,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#EFF6F2">
 
     <!-- AppBar with toolbar -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#1D9E75"
-        app:elevation="0dp">
+        app:elevation="6dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarMain"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp">
+            android:layout_height="68dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
 
             <!-- Location title -->
             <LinearLayout
@@ -32,14 +32,15 @@
                     android:layout_height="wrap_content"
                     android:text="Your location"
                     android:textSize="11sp"
-                    android:textColor="#A8E6CF" />
+                    android:letterSpacing="0.03"
+                    android:textColor="#96DDBC" />
 
                 <TextView
                     android:id="@+id/tvLocationTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Detecting…"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -47,9 +48,9 @@
             <!-- Logout button -->
             <ImageButton
                 android:id="@+id/btnLogout"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_icon_button_circle"
                 android:src="@drawable/ic_logout"
                 app:tint="#FFFFFF"
                 android:contentDescription="Logout" />
@@ -61,18 +62,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="14dp"
             android:gravity="center_vertical"
             android:background="#1D9E75">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="42dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="21dp"
-                app:cardElevation="0dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
                 app:cardBackgroundColor="#FFFFFF">
 
                 <LinearLayout
@@ -80,16 +81,16 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:paddingStart="14dp"
-                    android:paddingEnd="8dp">
+                    android:paddingStart="16dp"
+                    android:paddingEnd="10dp">
 
                     <ImageView
                         android:id="@+id/btnSearch"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/ic_search"
                         app:tint="#1D9E75"
-                        android:layout_marginEnd="8dp" />
+                        android:layout_marginEnd="10dp" />
 
                     <EditText
                         android:id="@+id/etSearch"
@@ -114,56 +115,56 @@
             android:layout_height="wrap_content"
             android:scrollbars="none"
             android:background="#1D9E75"
-            android:paddingBottom="10dp">
+            android:paddingBottom="14dp">
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chipGroupCuisine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
                 app:singleSelection="true"
                 app:selectionRequired="false">
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipAll"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="34dp"
                     android:text="All"
                     style="@style/CuisineChip" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipIndian"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="34dp"
                     android:text="Indian"
                     style="@style/CuisineChip" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipChinese"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="34dp"
                     android:text="Chinese"
                     style="@style/CuisineChip" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipPizza"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="34dp"
                     android:text="Pizza"
                     style="@style/CuisineChip" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipBurger"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="34dp"
                     android:text="Burger"
                     style="@style/CuisineChip" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipCafe"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="34dp"
                     android:text="Cafe"
                     style="@style/CuisineChip" />
 
@@ -192,8 +193,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingTop="8dp"
+            android:paddingTop="12dp"
             android:paddingBottom="80dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
             android:clipToPadding="false" />
 
     </LinearLayout>
@@ -207,8 +210,8 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="80dp"
         android:src="@drawable/ic_chat"
-        app:backgroundTint="#FF9800"
-        app:tint="#000000"
+        app:backgroundTint="#E07A2A"
+        app:tint="#FFFFFF"
         app:elevation="12dp"
         android:contentDescription="Open AI Chat" />
 
@@ -222,6 +225,234 @@
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/bottom_nav_color"
         app:itemTextColor="@color/bottom_nav_color"
-        app:elevation="8dp" />
+        app:elevation="10dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#F5F5F5">-->
+
+<!--    &lt;!&ndash; AppBar with toolbar &ndash;&gt;-->
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#1D9E75"-->
+<!--        app:elevation="0dp">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbarMain"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:paddingStart="8dp"-->
+<!--            android:paddingEnd="8dp">-->
+
+<!--            &lt;!&ndash; Location title &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Your location"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:textColor="#A8E6CF" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvLocationTitle"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Detecting…"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="#FFFFFF" />-->
+<!--            </LinearLayout>-->
+
+<!--            &lt;!&ndash; Logout button &ndash;&gt;-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/btnLogout"-->
+<!--                android:layout_width="36dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:src="@drawable/ic_logout"-->
+<!--                app:tint="#FFFFFF"-->
+<!--                android:contentDescription="Logout" />-->
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--        &lt;!&ndash; Search bar &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:paddingStart="12dp"-->
+<!--            android:paddingEnd="12dp"-->
+<!--            android:paddingBottom="12dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:background="#1D9E75">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="42dp"-->
+<!--                android:layout_weight="1"-->
+<!--                app:cardCornerRadius="21dp"-->
+<!--                app:cardElevation="0dp"-->
+<!--                app:cardBackgroundColor="#FFFFFF">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:paddingStart="14dp"-->
+<!--                    android:paddingEnd="8dp">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/btnSearch"-->
+<!--                        android:layout_width="18dp"-->
+<!--                        android:layout_height="18dp"-->
+<!--                        android:src="@drawable/ic_search"-->
+<!--                        app:tint="#1D9E75"-->
+<!--                        android:layout_marginEnd="8dp" />-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/etSearch"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:hint="Search city or cuisine…"-->
+<!--                        android:textColor="#1A1A1A"-->
+<!--                        android:textColorHint="#AAAAAA"-->
+<!--                        android:textSize="13sp"-->
+<!--                        android:background="@null"-->
+<!--                        android:imeOptions="actionSearch"-->
+<!--                        android:inputType="text"-->
+<!--                        android:singleLine="true" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Cuisine chips &ndash;&gt;-->
+<!--        <HorizontalScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:scrollbars="none"-->
+<!--            android:background="#1D9E75"-->
+<!--            android:paddingBottom="10dp">-->
+
+<!--            <com.google.android.material.chip.ChipGroup-->
+<!--                android:id="@+id/chipGroupCuisine"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingStart="12dp"-->
+<!--                android:paddingEnd="12dp"-->
+<!--                app:singleSelection="true"-->
+<!--                app:selectionRequired="false">-->
+
+<!--                <com.google.android.material.chip.Chip-->
+<!--                    android:id="@+id/chipAll"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:text="All"-->
+<!--                    style="@style/CuisineChip" />-->
+
+<!--                <com.google.android.material.chip.Chip-->
+<!--                    android:id="@+id/chipIndian"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:text="Indian"-->
+<!--                    style="@style/CuisineChip" />-->
+
+<!--                <com.google.android.material.chip.Chip-->
+<!--                    android:id="@+id/chipChinese"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:text="Chinese"-->
+<!--                    style="@style/CuisineChip" />-->
+
+<!--                <com.google.android.material.chip.Chip-->
+<!--                    android:id="@+id/chipPizza"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:text="Pizza"-->
+<!--                    style="@style/CuisineChip" />-->
+
+<!--                <com.google.android.material.chip.Chip-->
+<!--                    android:id="@+id/chipBurger"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:text="Burger"-->
+<!--                    style="@style/CuisineChip" />-->
+
+<!--                <com.google.android.material.chip.Chip-->
+<!--                    android:id="@+id/chipCafe"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:text="Cafe"-->
+<!--                    style="@style/CuisineChip" />-->
+
+<!--            </com.google.android.material.chip.ChipGroup>-->
+<!--        </HorizontalScrollView>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--    &lt;!&ndash; Main content &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/progressBar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="48dp"-->
+<!--            android:visibility="gone" />-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rvRestaurants"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:paddingTop="8dp"-->
+<!--            android:paddingBottom="80dp"-->
+<!--            android:clipToPadding="false" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; FAB for AI Chat &ndash;&gt;-->
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fabChat"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginBottom="80dp"-->
+<!--        android:src="@drawable/ic_chat"-->
+<!--        app:backgroundTint="#FF9800"-->
+<!--        app:tint="#000000"-->
+<!--        app:elevation="12dp"-->
+<!--        android:contentDescription="Open AI Chat" />-->
+
+<!--    &lt;!&ndash; Bottom Navigation &ndash;&gt;-->
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottomNav"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:background="#FFFFFF"-->
+<!--        app:menu="@menu/bottom_nav_menu"-->
+<!--        app:itemIconTint="@color/bottom_nav_color"-->
+<!--        app:itemTextColor="@color/bottom_nav_color"-->
+<!--        app:elevation="8dp" />-->
+
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->
