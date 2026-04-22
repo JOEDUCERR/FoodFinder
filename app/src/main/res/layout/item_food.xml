@@ -8,7 +8,6 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
 
-    <!-- Dot indicator -->
     <View
         android:layout_width="6dp"
         android:layout_height="6dp"
@@ -22,7 +21,7 @@
         android:layout_weight="1"
         android:text="Food Item"
         android:textSize="13sp"
-        android:textColor="#1A1A1A" />
+        android:textColor="#111111" />
 
     <TextView
         android:id="@+id/tvFoodPrice"
@@ -31,6 +30,44 @@
         android:text="₹299"
         android:textSize="13sp"
         android:textStyle="bold"
-        android:textColor="#1D9E75" />
+        android:textColor="#2ECC71" />
 
 </LinearLayout>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:gravity="center_vertical"-->
+<!--    android:paddingTop="10dp"-->
+<!--    android:paddingBottom="10dp">-->
+
+<!--    &lt;!&ndash; Dot indicator &ndash;&gt;-->
+<!--    <View-->
+<!--        android:layout_width="6dp"-->
+<!--        android:layout_height="6dp"-->
+<!--        android:background="@drawable/bg_dot_green"-->
+<!--        android:layout_marginEnd="10dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvFoodName"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:text="Food Item"-->
+<!--        android:textSize="13sp"-->
+<!--        android:textColor="#1A1A1A" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvFoodPrice"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="₹299"-->
+<!--        android:textSize="13sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="#1D9E75" />-->
+
+<!--</LinearLayout>-->

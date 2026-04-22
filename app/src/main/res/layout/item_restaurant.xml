@@ -9,7 +9,7 @@
     android:layout_marginBottom="10dp"
     app:cardCornerRadius="14dp"
     app:cardElevation="1dp"
-    app:cardBackgroundColor="#FFFFFF">
+    app:cardBackgroundColor="#1A1A1A">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,6 @@
         android:orientation="vertical"
         android:padding="12dp">
 
-        <!-- Restaurant image placeholder -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -30,7 +29,6 @@
                 android:scaleType="centerCrop"
                 android:background="@drawable/bg_restaurant_placeholder" />
 
-            <!-- Cuisine tag badge -->
             <TextView
                 android:id="@+id/tvCuisineTag"
                 android:layout_width="wrap_content"
@@ -42,7 +40,7 @@
                 android:paddingEnd="8dp"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp"
-                android:textColor="#085041"
+                android:textColor="#2ECC71"
                 android:textSize="11sp"
                 android:text="Indian" />
         </FrameLayout>
@@ -63,7 +61,7 @@
                 android:text="Restaurant Name"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A1A"
+                android:textColor="@color/white"
                 android:maxLines="1"
                 android:ellipsize="end" />
 
@@ -73,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:text="★ 4.2"
                 android:textSize="12sp"
-                android:textColor="#BA7517" />
+                android:textColor="#F0A500" />
         </LinearLayout>
 
         <!-- Address -->
@@ -83,10 +81,106 @@
             android:layout_height="wrap_content"
             android:text="123 Street, City"
             android:textSize="12sp"
-            android:textColor="#888888"
+            android:textColor="#666666"
             android:maxLines="1"
             android:ellipsize="end"
             android:drawablePadding="4dp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.cardview.widget.CardView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="12dp"-->
+<!--    android:layout_marginEnd="12dp"-->
+<!--    android:layout_marginBottom="10dp"-->
+<!--    app:cardCornerRadius="14dp"-->
+<!--    app:cardElevation="1dp"-->
+<!--    app:cardBackgroundColor="#FFFFFF">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="12dp">-->
+
+<!--        &lt;!&ndash; Restaurant image placeholder &ndash;&gt;-->
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_marginBottom="10dp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ivRestaurantImage"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:background="@drawable/bg_restaurant_placeholder" />-->
+
+<!--            &lt;!&ndash; Cuisine tag badge &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/tvCuisineTag"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="bottom|start"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:background="@drawable/bg_tag_green"-->
+<!--                android:paddingStart="8dp"-->
+<!--                android:paddingEnd="8dp"-->
+<!--                android:paddingTop="3dp"-->
+<!--                android:paddingBottom="3dp"-->
+<!--                android:textColor="#085041"-->
+<!--                android:textSize="11sp"-->
+<!--                android:text="Indian" />-->
+<!--        </FrameLayout>-->
+
+<!--        &lt;!&ndash; Name + stars row &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:layout_marginBottom="4dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvRestaurantName"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="Restaurant Name"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#1A1A1A"-->
+<!--                android:maxLines="1"-->
+<!--                android:ellipsize="end" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvRating"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="★ 4.2"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textColor="#BA7517" />-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Address &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvRestaurantAddress"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="123 Street, City"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textColor="#888888"-->
+<!--            android:maxLines="1"-->
+<!--            android:ellipsize="end"-->
+<!--            android:drawablePadding="4dp" />-->
+
+<!--    </LinearLayout>-->
+<!--</androidx.cardview.widget.CardView>-->

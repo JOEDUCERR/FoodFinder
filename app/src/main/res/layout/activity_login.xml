@@ -128,40 +128,9 @@
                     android:backgroundTint="#1D9E75"
                     android:layout_marginBottom="14dp" />
 
-                <!-- Divider -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="14dp">
 
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_weight="1"
-                        android:background="#E0E0E0" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="  or  "
-                        android:textSize="12sp"
-                        android:textColor="#AAAAAA" />
 
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_weight="1"
-                        android:background="#E0E0E0" />
-                </LinearLayout>
-
-                <!-- Google Sign-In button -->
-                <com.google.android.gms.common.SignInButton
-                    android:id="@+id/btnGoogleSignIn"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginBottom="20dp" />
 
                 <!-- Register link -->
                 <LinearLayout
