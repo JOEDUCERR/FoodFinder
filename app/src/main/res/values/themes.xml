@@ -3,6 +3,10 @@
         <item name="colorPrimary">#1B5E20</item>
         <item name="colorPrimaryVariant">#1B5E20</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="android:statusBarColor">#1B5E20</item>
+<!--        <item name="android:statusBarColor">#1B5E20</item>-->
+
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

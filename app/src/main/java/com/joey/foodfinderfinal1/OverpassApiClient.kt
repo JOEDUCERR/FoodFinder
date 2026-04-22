@@ -11,6 +11,14 @@ import java.net.URLEncoder
 
 object OverpassApiClient {
 
+//    Coroutines (asynchronous programming)
+//    Caching (performance optimization)
+//    Rate limiting (API safety)
+//    REST API handling
+//    JSON parsing
+//    Parallel execution
+//    Fallback mechanisms
+
     private val MIRRORS = listOf(
         "https://lz4.overpass-api.de/api/interpreter",
         "https://overpass-api.de/api/interpreter",
@@ -185,7 +193,7 @@ object OverpassApiClient {
     }
 
     // ─────────────────────────────────────────────────────────────────────────────
-    // Overpass query builders
+    // Overpass query builders searches entire city
     // ─────────────────────────────────────────────────────────────────────────────
     private fun buildAreaQuery(relationId: Long): String {
         val areaId = 3_600_000_000L + relationId
@@ -204,6 +212,7 @@ object OverpassApiClient {
         """.trimIndent()
     }
 
+    //searches lat and lon
     private fun buildRadiusQuery(lat: String, lon: String, radius: Int) = """
         [out:json][timeout:30];
         (
@@ -257,6 +266,7 @@ object OverpassApiClient {
         }
     }
 
+    //main way to call restaurants
     private fun fetchFromMirror(
         mirrorUrl: String,
         postData: String,
@@ -289,7 +299,7 @@ object OverpassApiClient {
     }
 
     // ─────────────────────────────────────────────────────────────────────────────
-    // Parse Overpass elements → Restaurant list
+    // Parse Overpass elements → Restaurant list (api data to res objects)
     // ─────────────────────────────────────────────────────────────────────────────
     private fun parseElements(elements: JSONArray, resolvedName: String): List<Restaurant> {
         val list = mutableListOf<Restaurant>()
