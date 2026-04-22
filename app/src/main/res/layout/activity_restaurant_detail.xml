@@ -26,7 +26,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:background="@drawable/bg_restaurant_placeholder" />
+                    android:background="#D6EDE4"/>
 
                 <!-- Back + action buttons overlay -->
                 <LinearLayout

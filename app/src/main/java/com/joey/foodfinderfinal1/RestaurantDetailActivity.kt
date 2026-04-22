@@ -51,6 +51,8 @@
 package com.joey.foodfinderfinal1
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -69,6 +71,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.bumptech.glide.Glide
 
 // ─────────────────────────────────────────────────────────────────────────────
 // RestaurantDetailActivity — upgrades applied:
@@ -107,6 +110,14 @@ class RestaurantDetailActivity : AppCompatActivity(), OnMapReadyCallback {
             @Suppress("DEPRECATION")
             intent.getParcelableExtra("EXTRA_RESTAURANT")
         } ?: return
+
+        Glide.with(this)
+            .load(getCuisineImageRes(restaurant.cuisineTag, restaurant.name))
+            .override(1080, 600)
+            .centerCrop()
+            .placeholder(ColorDrawable(Color.parseColor("#D6EDE4")))
+            .error(ColorDrawable(Color.parseColor("#D6EDE4")))
+            .into(findViewById(R.id.ivDetailHero))
 
         // ── Basic info ────────────────────────────────────────────────────────
         findViewById<TextView>(R.id.tvDetailName).text    = restaurant.name
@@ -186,6 +197,35 @@ class RestaurantDetailActivity : AppCompatActivity(), OnMapReadyCallback {
                     putExtra(Intent.EXTRA_TEXT, text)
                 }, "Share ${restaurant.name}"
             ))
+        }
+    }
+
+    private fun getCuisineImageRes(cuisineTag: String, name: String): Int {
+        val c = cuisineTag.lowercase()
+        val n = name.lowercase()
+        return when {
+            c.contains("indian")   || c.contains("biryani") ||
+                    c.contains("punjabi")  || n.contains("spice")   -> R.drawable.food_indian
+
+            c.contains("chinese")  || c.contains("asian")   ||
+                    n.contains("dragon")   || n.contains("wok")      -> R.drawable.food_chinese
+
+            c.contains("pizza")    || c.contains("italian")  ||
+                    n.contains("pizza")                               -> R.drawable.food_pizza
+
+            c.contains("burger")   || c.contains("american") ||
+                    n.contains("burger")                              -> R.drawable.food_burger
+
+            c.contains("cafe")     || c.contains("coffee")   ||
+                    n.contains("cafe")     || n.contains("brew")      -> R.drawable.food_cafe
+
+            c.contains("sushi")    || c.contains("japanese") -> R.drawable.food_sushi
+
+            c.contains("mexican")  || c.contains("taco")     -> R.drawable.food_mexican
+
+            c.contains("sandwich") || c.contains("bakery")   -> R.drawable.food_bakery
+
+            else                                              -> R.drawable.food_default
         }
     }
 
