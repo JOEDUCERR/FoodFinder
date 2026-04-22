@@ -8,12 +8,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.foodfinderfinal1"
+    namespace = "com.joey.foodfinderfinal1"
     compileSdk = 35 // "release(36)" syntax from user, changing to standard integer to ensure it builds
     // (User's snippet had compileSdk { version = release(36) }, sticking to standard)
 
     defaultConfig {
-        applicationId = "com.example.foodfinderfinal1"
+        applicationId = "com.joey.foodfinderfinal1"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
