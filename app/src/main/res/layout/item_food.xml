@@ -21,7 +21,7 @@
         android:layout_weight="1"
         android:text="Food Item"
         android:textSize="13sp"
-        android:textColor="#E0E0E0" />
+        android:textColor="#111111" />
 
     <TextView
         android:id="@+id/tvFoodPrice"
